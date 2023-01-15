@@ -17,7 +17,7 @@ def resource_path(relative_path):
 
 
 root = Tk()
-root.title("YouTube downloader")
+root.title("PyTuber")
 root.minsize(width=450, height=600)
 root.maxsize(width=450, height=600)
 root.iconbitmap(resource_path("YouTube.ico"))
@@ -243,7 +243,6 @@ def youtube_screen():
         global link
 
         link = link_entry.get()
-        download_path = path_entry.get()
 
         try:
             mp4_video = YouTube(link).streams.filter(res=resolution_value).first().download(
@@ -284,21 +283,21 @@ def youtube_screen():
 
     status_entry = Entry(root, width=20, borderwidth=0, font=("Kristen ITC", 17), bg="#000000",
                          foreground="white")
-    status_entry.place(x=57, y=472, height=35, width=325)
+    status_entry.place(x=57, y=497, height=35, width=325)
 
     button_choose_path = PhotoImage(file=resource_path("choose_path_button.png"))
     button_choose_path_label = Label(image=button_choose_path, borderwidth=0)
-    button_choose_path_label.place(x=155, y=315)
+    button_choose_path_label.place(x=200, y=315)
     real_button_choose_path = Button(root, image=button_choose_path, borderwidth=0, activebackground="#323232",
                                      bg="#323232", command=choose_path)
-    real_button_choose_path.place(x=155, y=315)
+    real_button_choose_path.place(x=200, y=315)
 
     button_download = PhotoImage(file=resource_path("download_button.png"))
     button_download_label = Label(image=button_download, borderwidth=0)
-    button_download_label.place(x=155, y=550)
+    button_download_label.place(x=200, y=545)
     real_button_download = Button(root, image=button_download, borderwidth=0, activebackground="#323232", bg="#323232",
                                   command=download)
-    real_button_download.place(x=155, y=550)
+    real_button_download.place(x=200, y=545)
 
     button_144p = PhotoImage(file=resource_path("144p_button.png"))
     button_144p_label = Label(image=button_144p, borderwidth=0)
@@ -334,13 +333,6 @@ def youtube_screen():
     real_button_720p = Button(root, image=button_720p, borderwidth=0, activebackground="#323232", bg="#323232",
                               command=lambda: res_getter("720p"))
     real_button_720p.place(x=350, y=385)
-
-    button_youtube = PhotoImage(file=resource_path("youtube_section_button.png"))
-    button_youtube_label = Label(image=button_youtube, borderwidth=0)
-    button_youtube_label.place(x=200, y=0)
-    real_button_youtube = Button(root, image=button_youtube, borderwidth=0, activebackground="#B60000", bg="#B60000",
-                                 command=youtube_screen)
-    real_button_youtube.place(x=200, y=0)
 
 
 youtube_screen()
