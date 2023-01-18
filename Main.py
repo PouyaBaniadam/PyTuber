@@ -19,8 +19,8 @@ def resource_path(relative_path):
 
 root = Tk()
 root.title("PyTuber")
-root.minsize(width=450, height=600)
-root.maxsize(width=450, height=600)
+root.minsize(width=450, height=650)
+root.maxsize(width=450, height=650)
 root.iconbitmap(resource_path("YouTube.ico"))
 
 
@@ -39,7 +39,7 @@ def youtube_screen():
     bg_label = Label(image=bg)
     bg_label.place(x=-6, y=-2)
 
-    default_font = Font(family="MV Boli", size=15)
+    default_font = Font(family="MV Boli", size=17)
 
     def res_getter(resolution):
         global resolution_value
@@ -279,21 +279,21 @@ def youtube_screen():
             status_entry.insert(0, "Check your internet connection!")
 
     link_entry = Entry(root, width=20, borderwidth=0, font=default_font, bg="#121212", foreground="white")
-    link_entry.place(x=40, y=152, height=30, width=370)
+    link_entry.place(x=55, y=152, height=30, width=340)
 
     path_entry = Entry(root, width=20, borderwidth=0, font=default_font, bg="#121212", foreground="white")
-    path_entry.place(x=40, y=270, height=30, width=370)
+    path_entry.place(x=55, y=270, height=30, width=340)
 
     status_entry = Entry(root, width=20, borderwidth=0, font=default_font, bg="#121212",
                          foreground="white")
-    status_entry.place(x=57, y=550, height=35, width=325)
+    status_entry.place(x=55, y=580, height=30, width=340)
 
     button_choose_path = PhotoImage(file=resource_path("choose_path_button.png"))
     button_choose_path_label = Label(image=button_choose_path, borderwidth=0)
-    button_choose_path_label.place(x=200, y=325)
+    button_choose_path_label.place(x=200, y=315)
     real_button_choose_path = Button(root, image=button_choose_path, borderwidth=0, activebackground="#1F1F1F",
                                      bg="#1F1F1F", command=choose_path)
-    real_button_choose_path.place(x=200, y=325)
+    real_button_choose_path.place(x=200, y=315)
 
     button_download = PhotoImage(file=resource_path("download_button.png"))
     button_download_label = Label(image=button_download, borderwidth=0)
